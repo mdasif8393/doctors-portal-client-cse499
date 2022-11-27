@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const MyAppointments = () => {
@@ -11,6 +12,7 @@ const MyAppointments = () => {
 
     const [appointments, setAppointments] = useState([]);
     const [user] = useAuthState(auth);
+
 
     useEffect(()=>{
         if(user){
@@ -37,7 +39,7 @@ const MyAppointments = () => {
 
     return (
         <div>
-            <h2>My Appointments{appointments.length}</h2>
+            <h2>My Appointments: {appointments.length}</h2>
             <div className="overflow-x-auto">
   <table className="table w-full">
     <thead>

@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import Footer from '../Shared/Footer';
 import Loading from '../Shared/Loading';
 import AllDoctor from './AllDoctor';
 
@@ -17,6 +18,7 @@ const AllDoctors = () => {
                     doctors.map(doctors => <AllDoctor doctors={doctors} ></AllDoctor>)
                 }
             </div>
+            <Footer></Footer>
         </div>
     );
 };

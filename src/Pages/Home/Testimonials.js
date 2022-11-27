@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import quote from '../../assets/icons/quote.svg'
+import Footer from '../Shared/Footer';
 import Review from './Review';
 
 const Testimonials = () => {
@@ -34,6 +35,7 @@ const Testimonials = () => {
                     allReviews.map(reviews => <Review key={reviews._id} reviews={reviews} ></Review>)
                 }
             </div>
+            <Footer></Footer>
         </section>
     );
 };

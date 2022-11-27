@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate, redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -10,6 +11,7 @@ const MyReview = () => {
 
     const userReview = {
         user: user?.displayName,
+        email: user?.email,
         photoUrl: user?.photoURL,
         review: review,
     }
@@ -47,11 +49,15 @@ const MyReview = () => {
         }
 
     }
+
+
+
+
     return (
         <div className="grid justify-items-center mt-10">
             <form onSubmit={handleFormSubmit} onChange={handleText} action="">
                 <textarea className="textarea textarea-accent w-96 h-52" placeholder="Write Your Review Here"></textarea> <br /> <br />
-                <input className="btn btn-accent btn-block" type="submit" value="Submit" />
+                <input   className="btn btn-accent btn-block" type="submit" value="Submit" />
             </form>
 
         </div>

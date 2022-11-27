@@ -42,6 +42,7 @@ const AddDoctor = () => {
                     const img = result?.data?.url;
                     const doctor = {
                         name: data.name,
+                        email: data.email,
                         degree: data.degree,
                         email: data.email,
                         specialty: data.specialty,
@@ -98,6 +99,8 @@ const AddDoctor = () => {
                         {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors?.name?.message}</span>}
                     </label>
                 </div>
+
+                
 
                 {/* Degree */}
                 <div className="form-control w-full max-w-xs">
@@ -239,6 +242,26 @@ const AddDoctor = () => {
                     </label>
                 </div>
 
+                {/* Email */}
+                <div className="form-control w-full max-w-xs">
+                    <label className="label ">
+                        <span className="label-text text-gray-600">Doctor's Email</span>
+                    </label>
+
+                    <input type="text" placeholder="Doctor's Email" className="input input-bordered w-full max-w-xs bg-white"
+                        {...register("email", {
+                            required: {
+                                value: true,
+                                message: 'Email is required'
+                            }
+                        })}
+                    />
+
+                    <label className="label">
+                        {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors?.name?.message}</span>}
+                    </label>
+                </div>
+
                 <div className="form-control w-full max-w-xs">
                     <label className="label ">
                         <span className="label-text text-gray-600">Doctor's Photo</span>
@@ -257,6 +280,7 @@ const AddDoctor = () => {
                         {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors?.name?.message}</span>}
                     </label>
                 </div>
+
 
                 <br />
                 <input className="btn w-full max-w-xs" type="submit" value="Add" />

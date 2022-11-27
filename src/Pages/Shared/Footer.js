@@ -11,17 +11,11 @@ const Footer = () => {
         <a className="link link-hover">Oral Surgery</a>
         <a className="link link-hover">Teeth Orthodontics</a>
       </div>
-      <div>
-        <span className="footer-title">Company</span>
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
-      </div>
+
       <div>
         <span className="footer-title">Location</span>
         <div className="avatar">
-          <div className="w-60 h-32 rounded">
+          <div className="w-96 h-32 rounded">
             <img src="https://i.ibb.co/Cv1M9xN/map.png" />
           </div>
         </div>
